@@ -149,9 +149,33 @@
       
 
 
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">分类</h3>
+      <div class="category-box">
+            <a class="category-link" href="/categories/%E9%9A%8F%E8%AE%B0/">
+                随记
+                <div class="category-count">1</div>
+            </a>
+        
+            <a class="category-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/">
+                项目记录
+                <div class="category-count">1</div>
+            </a>
+        </div>
+    </div>
+  </div>
+
 
     
       
+  <div class="widget-wrap">
+    <div class="widget">
+      <h3 class="widget-title">标签</h3>
+      <ul class="widget-tag-list" itemprop="keywords"><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/openwrt/" rel="tag">openwrt</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li><li class="widget-tag-list-item"><a class="widget-tag-list-link" href="/tags/%E9%9A%8F%E8%AE%B0/" rel="tag">随记</a></li></ul>
+    </div>
+  </div>
+
 
     
       
@@ -162,7 +186,7 @@
       
         <a class="archive-link" href="/archives/2023/10 ">
           十月 2023 
-          <div class="archive-count">1 </div>
+          <div class="archive-count">2 </div>
         </a>
       
     </div>
@@ -175,6 +199,12 @@
     <div class="widget">
       <h3 class="widget-title">最新文章</h3>
       <ul>
+        
+          <a class="recent-link" href="/2023/10/11/%E6%8C%89%E7%85%A7%E9%9C%80%E6%B1%82%E5%AE%9A%E5%88%B6%E8%87%AA%E5%B7%B1%E7%9A%84openwrt/" title="编译一个自己的openwrt" >
+            <div class="recent-link-text">
+              编译一个自己的openwrt
+            </div>
+          </a>
         
           <a class="recent-link" href="/2023/10/11/Hello-World/" title="Hello World" >
             <div class="recent-link-text">
@@ -192,6 +222,73 @@
     </div>
     <div id="content-body">
       
+   
+
+<article id="post-按照需求定制自己的openwrt" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+   
+  <div class="article-inner">
+    <div class="article-main">
+      <header class="article-header">
+        
+<div class="main-title-bar">
+  <div class="main-title-dot"></div>
+  
+    
+      <h1 itemprop="name">
+        <a class="p-name article-title" href="/2023/10/11/%E6%8C%89%E7%85%A7%E9%9C%80%E6%B1%82%E5%AE%9A%E5%88%B6%E8%87%AA%E5%B7%B1%E7%9A%84openwrt/">编译一个自己的openwrt</a>
+      </h1>
+    
+  
+</div>
+
+        <div class='meta-info-bar'>
+          <div class="meta-info">
+  <time class="dt-published" datetime="2023-10-11T04:21:51.000Z" itemprop="datePublished">2023-10-11</time>
+</div>
+          <div class="need-seperator meta-info">
+            <div class="meta-cate-flex">
+  
+  <a class="meta-cate-link" href="/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/">项目记录</a>
+   
+</div>
+  
+          </div>
+          <div class="wordcount need-seperator meta-info">
+            112 词 
+          </div>
+        </div>
+        
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/openwrt/" rel="tag">openwrt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%B0%E5%BD%95/" rel="tag">记录</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/" rel="tag">软路由</a></li></ul>
+
+      </header>
+      <div class="e-content article-entry" itemprop="articleBody">
+        
+          <div class="truncate-text">
+            在闲鱼捡了一台N5105的四口2.5G软路由，尝试刷了很多固件，依旧没有找到适合自己的，要么是功能塞满很多功能用不到，要么把功能精简的寥寥无几，遂尝试根据自己的需求去编译一个openwrt使用，因毫无相关技术基础，索性将尝试的过程记录下来，以方便自己查缺补漏。
+前言：  
+          </div>
+        
+      </div>
+
+         
+    </div>
+    
+     
+    <a class="right-panel  non-pic  "
+      
+      href="/2023/10/11/%E6%8C%89%E7%85%A7%E9%9C%80%E6%B1%82%E5%AE%9A%E5%88%B6%E8%87%AA%E5%B7%B1%E7%9A%84openwrt/" 
+    >
+       
+      <i class="fa-solid fa-angle-right non-pic"></i>
+       
+    </a>
+     
+  </div>
+  
+</article>
+
+ 
+
    
 
 <article id="post-Hello-World" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
@@ -218,22 +315,25 @@
           <div class="need-seperator meta-info">
             <div class="meta-cate-flex">
   
-    未分类 
+  <a class="meta-cate-link" href="/categories/%E9%9A%8F%E8%AE%B0/">随记</a>
    
 </div>
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            161 词 
+            55 词 
           </div>
         </div>
         
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9A%8F%E8%AE%B0/" rel="tag">随记</a></li></ul>
+
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
           <div class="truncate-text">
-            从这里开始，我会把自己做项目的过程记录下来，以供所有人参考。
-你说的对，但是《原神》是由米哈游自主研发的一款全新开放世界冒险游戏。游戏发生在一个被称作「提瓦特」的幻想世界，在这里，被神选中的人将被授予「神之眼」，导引元素之力。你将扮演一位名为「旅行者」的神秘角色，在自由的旅行中邂逅性格各异、能力独特的同伴们，和他们一起击败强敌，找回失散的亲人——同时，逐步发掘「原神」的真相。
+            从这里开始，我会把自己做项目的过程记录下来，以供参考。
+博客搭建使用以下项目：https://github.com/hexojs/hexohttps://github.com/saicaca/hexo-theme-vivia
+感谢这些项目的开源作者。
   
           </div>
         
