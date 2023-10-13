@@ -27,11 +27,13 @@
 <meta property="og:site_name" content="xwsjjctz&#39;s blog">
 <meta property="og:description" content="使用esxi创建了一个gpu服务器用于跑深度学习，环境搭建好之后感觉一直用ssh也不是很方便，就安装了jupyterlab以方便文件的修改，奈何jupyterlab本身并没有开机自启的服务，所以去了解了一下systemctl命令并尝试自己注册一个jupyterlab的服务。 前言：我这里用的操作系统是ubuntuserver22.04.3，不同的Linux发行版可能会有些许区别，不过大同小异。 参">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xwsjjctz.github.io/image/systemctl%E2%80%94%E2%80%94%E2%80%94%E2%80%94Linux%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0/jupyterlab%E7%95%8C%E9%9D%A2.png">
 <meta property="article:published_time" content="2023-10-13T06:03:56.000Z">
-<meta property="article:modified_time" content="2023-10-13T12:49:54.563Z">
+<meta property="article:modified_time" content="2023-10-13T13:01:35.256Z">
 <meta property="article:author" content="xwsjjctz">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xwsjjctz.github.io/image/systemctl%E2%80%94%E2%80%94%E2%80%94%E2%80%94Linux%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0/jupyterlab%E7%95%8C%E9%9D%A2.png">
   
     <link rel="alternate" href="/atom.xml" title="xwsjjctz's blog" type="application/atom+xml">
   
@@ -350,7 +352,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">● jupyter.service - Jupyterlab</span><br><span class="line">     Loaded: loaded (/etc/systemd/system/jupyter.service; enabled; vendor preset: enabled)</span><br><span class="line">     Active: active (running) since Fri 2023-10-13 12:30:22 UTC; 11min ago</span><br><span class="line">   Main PID: 1592 (jupyter-lab)</span><br><span class="line">      Tasks: 73 (<span class="built_in">limit</span>: 57767)</span><br><span class="line">     Memory: 307.5M</span><br><span class="line">        CPU: 7.396s</span><br><span class="line">     CGroup: /system.slice/jupyter.service</span><br><span class="line">             └─1592 /home/hxz/anaconda3/bin/python /home/hxz/anaconda3/bin/jupyter-lab --config=/home/hxz/.jupyter/jupyter_lab_config.onfig=/home/hxz/.jupyter/jupyter_lab_config.py</span><br></pre></td></tr></table></figure>
 
 <p>说明服务已启动成功，打开jupyterlab的web界面查看，运行正常。</p>
-<p>![[jupyterlab界面.png]]</p>
+<p><img src="/../image/systemctl%E2%80%94%E2%80%94%E2%80%94%E2%80%94Linux%E7%B3%BB%E7%BB%9F%E6%9C%8D%E5%8A%A1%E5%AD%A6%E4%B9%A0/jupyterlab%E7%95%8C%E9%9D%A2.png" alt="jupyterlab——web界面"></p>
 <h2 id="结语："><a href="#结语：" class="headerlink" title="结语："></a>结语：</h2><p>觉得文章不错的话可以<code>Ctrl+D</code>收藏本博客。</p>
 
         
