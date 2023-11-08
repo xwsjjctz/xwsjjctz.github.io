@@ -27,12 +27,15 @@
 <meta property="og:site_name" content="xwsjjctz&#39;s blog">
 <meta property="og:description" content="参考： vscode配置pyqt5全过程(最新最全)_vscode安装pyqt5_程序员小杜的博客-CSDN博客Cheukfung&#x2F;pyqt-fluent-widgets-template: 配合qt designer使用，基于pyqt-fluent-widgets的模板 (github.com)Releases · zhiyiYo&#x2F;PyQt-Fluent-Widgets (g">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xwsjjctz.github.io/image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PYQT_Integration%E6%89%A9%E5%B1%95%E7%95%8C%E9%9D%A2.png">
+<meta property="og:image" content="https://xwsjjctz.github.io/image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/vscode%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E5%8F%B3%E9%94%AE.png">
 <meta property="article:published_time" content="2023-11-08T08:05:25.000Z">
-<meta property="article:modified_time" content="2023-11-08T08:42:55.494Z">
+<meta property="article:modified_time" content="2023-11-08T08:55:17.793Z">
 <meta property="article:author" content="xwsjjctz">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="pyqt">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xwsjjctz.github.io/image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PYQT_Integration%E6%89%A9%E5%B1%95%E7%95%8C%E9%9D%A2.png">
   
     <link rel="alternate" href="/atom.xml" title="xwsjjctz's blog" type="application/atom+xml">
   
@@ -284,7 +287,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            408 词 
+            380 词 
           </div>
         </div>
         
@@ -308,9 +311,9 @@
 <p>打开vscode在扩展商店下载PYQT Integration，下载完成后点开扩展界面进入扩展设置，在<code>Pyqt-integration › Pyuic: Cmd</code>和<code>Pyqt-integration › Qtdesigner: Path</code>分别输入当前python解释器环境下的pyuic5.exe和designer.exe的绝对路径。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\22516\.conda\envs\pyqt\Scripts\pyuic5.exe</span><br><span class="line">C:\Users\22516\.conda\envs\pyqt\Lib\site-packages\qt5_applications\Qt\bin\designer.exe</span><br></pre></td></tr></table></figure>
 
-<p>![[..&#x2F;image&#x2F;PyQt5学习笔记（一）————环境配置&#x2F;PYQT_Integration扩展界面.png]]</p>
+<p><img src="/../image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PYQT_Integration%E6%89%A9%E5%B1%95%E7%95%8C%E9%9D%A2.png" alt="PYQT_Integration扩展界面"></p>
 <h2 id="二、使用PYQT-Integration在vscode中快速创建pyqt项目"><a href="#二、使用PYQT-Integration在vscode中快速创建pyqt项目" class="headerlink" title="二、使用PYQT Integration在vscode中快速创建pyqt项目"></a>二、使用PYQT Integration在vscode中快速创建pyqt项目</h2><p>在vscode资源管理器空白处右键点击PYQT:New Form以打开QtDesigner，拖动一些控件到主窗口后保存，QtDesigner生成的ui文件会保存在此目录。</p>
-<p>![[..&#x2F;image&#x2F;PyQt5学习笔记（一）————环境配置&#x2F;vscode资源管理器右键.png]]</p>
+<p><img src="/../image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/vscode%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E5%8F%B3%E9%94%AE.png" alt="右键菜单"></p>
 <p>ui文件创建完毕后，右键ui文件，点击compile form即可生成ui的python代码，自行创建类继承ui主窗口类后使用show()函数启动页面，之后使用python执行代码，可以看见创建的页面已经打开。</p>
 
         
