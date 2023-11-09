@@ -20,17 +20,18 @@
   <link rel="preload" href="/css/fonts/Roboto-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="/css/fonts/Roboto-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
-  <meta name="description" content="参考： vscode配置pyqt5全过程(最新最全)_vscode安装pyqt5_程序员小杜的博客-CSDN博客Cheukfung&#x2F;pyqt-fluent-widgets-template: 配合qt designer使用，基于pyqt-fluent-widgets的模板 (github.com)Releases · zhiyiYo&#x2F;PyQt-Fluent-Widgets (g">
+  <meta name="description" content="自从接触python到现在，就来没有做过图形界面的开发，虽然已经习惯了命令行，但是想把写好的功能给零基础的朋友去用，还是会有一些门槛。从这篇开始，我会记录使用pyqt5开发软件图形界面的过程，并使用nuitka打包成二进制文件。 参考： vscode配置pyqt5全过程(最新最全)_vscode安装pyqt5_程序员小杜的博客-CSDN博客Cheukfung&#x2F;pyqt-fluent-wi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PyQt5学习笔记（一）————环境配置">
 <meta property="og:url" content="https://xwsjjctz.github.io/2023/11/08/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E9%A1%B5%E9%9D%A2/index.html">
 <meta property="og:site_name" content="xwsjjctz&#39;s blog">
-<meta property="og:description" content="参考： vscode配置pyqt5全过程(最新最全)_vscode安装pyqt5_程序员小杜的博客-CSDN博客Cheukfung&#x2F;pyqt-fluent-widgets-template: 配合qt designer使用，基于pyqt-fluent-widgets的模板 (github.com)Releases · zhiyiYo&#x2F;PyQt-Fluent-Widgets (g">
+<meta property="og:description" content="自从接触python到现在，就来没有做过图形界面的开发，虽然已经习惯了命令行，但是想把写好的功能给零基础的朋友去用，还是会有一些门槛。从这篇开始，我会记录使用pyqt5开发软件图形界面的过程，并使用nuitka打包成二进制文件。 参考： vscode配置pyqt5全过程(最新最全)_vscode安装pyqt5_程序员小杜的博客-CSDN博客Cheukfung&#x2F;pyqt-fluent-wi">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://xwsjjctz.github.io/image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/PYQT_Integration%E6%89%A9%E5%B1%95%E7%95%8C%E9%9D%A2.png">
 <meta property="og:image" content="https://xwsjjctz.github.io/image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/vscode%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E5%8F%B3%E9%94%AE.png">
+<meta property="og:image" content="https://xwsjjctz.github.io/image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/nuitka%E6%89%93%E5%8C%85.png">
 <meta property="article:published_time" content="2023-11-08T08:05:25.000Z">
-<meta property="article:modified_time" content="2023-11-08T08:55:17.793Z">
+<meta property="article:modified_time" content="2023-11-09T14:41:16.221Z">
 <meta property="article:author" content="xwsjjctz">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="pyqt">
@@ -287,7 +288,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            380 词 
+            961 词 
           </div>
         </div>
         
@@ -296,8 +297,9 @@
       </header>
       <div class="e-content article-entry" itemprop="articleBody">
         
-          <h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><blockquote>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37080185/article/details/121616507">vscode配置pyqt5全过程(最新最全)_vscode安装pyqt5_程序员小杜的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://github.com/Cheukfung/pyqt-fluent-widgets-template">Cheukfung&#x2F;pyqt-fluent-widgets-template: 配合qt designer使用，基于pyqt-fluent-widgets的模板 (github.com)</a><br><a target="_blank" rel="noopener" href="https://github.com/zhiyiYo/PyQt-Fluent-Widgets">Releases · zhiyiYo&#x2F;PyQt-Fluent-Widgets (github.com)</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1na4y1V7jH/?spm_id_from=..search-card.all.click&vd_source=a5232e5aef87714884c5c00ff2b7e738">PyQt-Fluent-Widgets 搭配 QtDesigner 的正确使用姿势_哔哩哔哩_bilibili</a></p>
+          <p>自从接触python到现在，就来没有做过图形界面的开发，虽然已经习惯了命令行，但是想把写好的功能给零基础的朋友去用，还是会有一些门槛。从这篇开始，我会记录使用pyqt5开发软件图形界面的过程，并使用nuitka打包成二进制文件。</p>
+<h2 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_37080185/article/details/121616507">vscode配置pyqt5全过程(最新最全)_vscode安装pyqt5_程序员小杜的博客-CSDN博客</a><br><a target="_blank" rel="noopener" href="https://github.com/Cheukfung/pyqt-fluent-widgets-template">Cheukfung&#x2F;pyqt-fluent-widgets-template: 配合qt designer使用，基于pyqt-fluent-widgets的模板 (github.com)</a><br><a target="_blank" rel="noopener" href="https://github.com/zhiyiYo/PyQt-Fluent-Widgets">Releases · zhiyiYo&#x2F;PyQt-Fluent-Widgets (github.com)</a><br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1na4y1V7jH/?spm_id_from=..search-card.all.click&vd_source=a5232e5aef87714884c5c00ff2b7e738">PyQt-Fluent-Widgets 搭配 QtDesigner 的正确使用姿势_哔哩哔哩_bilibili</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/133303836">Python打包exe的王炸-Nuitka - 知乎 (zhihu.com)</a></p>
 </blockquote>
 <h2 id="一、搭建开发环境"><a href="#一、搭建开发环境" class="headerlink" title="一、搭建开发环境"></a>一、搭建开发环境</h2><ul>
 <li>pyqt5</li>
@@ -315,6 +317,18 @@
 <h2 id="二、使用PYQT-Integration在vscode中快速创建pyqt项目"><a href="#二、使用PYQT-Integration在vscode中快速创建pyqt项目" class="headerlink" title="二、使用PYQT Integration在vscode中快速创建pyqt项目"></a>二、使用PYQT Integration在vscode中快速创建pyqt项目</h2><p>在vscode资源管理器空白处右键点击PYQT:New Form以打开QtDesigner，拖动一些控件到主窗口后保存，QtDesigner生成的ui文件会保存在此目录。</p>
 <p><img src="/../image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/vscode%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E5%8F%B3%E9%94%AE.png" alt="右键菜单"></p>
 <p>ui文件创建完毕后，右键ui文件，点击compile form即可生成ui的python代码，自行创建类继承ui主窗口类后使用show()函数启动页面，之后使用python执行代码，可以看见创建的页面已经打开。</p>
+<h2 id="三、使用nuitka打包图形程序"><a href="#三、使用nuitka打包图形程序" class="headerlink" title="三、使用nuitka打包图形程序"></a>三、使用nuitka打包图形程序</h2><p>安装nuitka</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install nuitka</span><br></pre></td></tr></table></figure>
+
+<p>使用参数（摘自<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/133303836">Python打包exe的王炸-Nuitka - 知乎 (zhihu.com)</a>）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">--mingw64 <span class="comment">#默认为已经安装的vs2017去编译，否则就按指定的比如mingw(官方建议)</span></span><br><span class="line">--standalone 独立环境，这是必须的(否则拷给别人无法使用)</span><br><span class="line">--windows-disable-console 没有CMD控制窗口</span><br><span class="line">--output-dir=out 生成exe到out文件夹下面去</span><br><span class="line">--show-progress 显示编译的进度，很直观</span><br><span class="line">--show-memory 显示内存的占用</span><br><span class="line">--enable-plugin=pyqt5</span><br><span class="line">--plugin-enable=tk-inter 打包tkinter模块的刚需</span><br><span class="line">--plugin-enable=numpy 打包numpy,pandas,matplotlib模块的刚需</span><br><span class="line">--plugin-enable=torch 打包pytorch的刚需</span><br><span class="line">--plugin-enable=tensorflow 打包tensorflow的刚需</span><br><span class="line">--windows-icon-from-ico=你的.ico 软件的图标</span><br><span class="line">--windows-company-name=Windows下软件公司信息</span><br><span class="line">--windows-product-name=Windows下软件名称</span><br><span class="line">--windows-file-version=Windows下软件的信息</span><br><span class="line">--windows-product-version=Windows下软件的产品信息</span><br><span class="line">--windows-file-description=Windows下软件的作用描述</span><br><span class="line">--windows-uac-admin=Windows下用户可以使用管理员权限来安装</span><br><span class="line">--linux-onefile-icon=Linux下的图标位置</span><br><span class="line">--onefile 像pyinstaller一样打包成单个exe文件</span><br><span class="line">**--include-package=复制比如numpy,PyQt5 这些带文件夹的叫包或者轮子**</span><br><span class="line">**--include-module=复制比如when.py 这些以.py结尾的叫模块**</span><br><span class="line"></span><br><span class="line">如下是一条Nuitka0.6.8.4完整的命令 编译的py文件为index.py(重点在--follow-import-to=need)</span><br></pre></td></tr></table></figure>
+
+<p>这里我使用以下命令进行打包：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nuitka --standalone --lto=no --mingw64 --show-progress --show-memory --enable-plugin=pyqt5 --output-dir=o .\qt_window.py</span><br></pre></td></tr></table></figure>
+
+<p><img src="/../image/PyQt5%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%88%E4%B8%80%EF%BC%89%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/nuitka%E6%89%93%E5%8C%85.png" alt="nuitka打包"></p>
+<p>经过漫长等待后打包完毕，启动qt_window.exe。</p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><p>初步尝试了一段时间，目前感觉和winform的开发体验有点相似，也刷到过有大佬使用pyside6将自己的软件打包成apk了，感觉这玩意上限很高，可惜没有这么多时间去深究，只求这段时间内能做个相对美观的页面。</p>
 
         
       </div>
