@@ -31,8 +31,9 @@
 <meta property="og:image" content="https://xwsjjctz.github.io/image/%E4%BD%BF%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%96%87%E6%A1%A3%E7%9F%AB%E6%AD%A3%E5%8A%9F%E8%83%BD/gray.jpg">
 <meta property="og:image" content="https://xwsjjctz.github.io/image/%E4%BD%BF%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%96%87%E6%A1%A3%E7%9F%AB%E6%AD%A3%E5%8A%9F%E8%83%BD/canny.jpg">
 <meta property="og:image" content="https://xwsjjctz.github.io/image/%E4%BD%BF%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%96%87%E6%A1%A3%E7%9F%AB%E6%AD%A3%E5%8A%9F%E8%83%BD/approx.jpg">
+<meta property="og:image" content="https://xwsjjctz.github.io/image/%E4%BD%BF%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%96%87%E6%A1%A3%E7%9F%AB%E6%AD%A3%E5%8A%9F%E8%83%BD/done.jpg">
 <meta property="article:published_time" content="2023-11-09T15:35:45.000Z">
-<meta property="article:modified_time" content="2023-11-11T13:40:51.815Z">
+<meta property="article:modified_time" content="2023-11-12T08:47:38.512Z">
 <meta property="article:author" content="xwsjjctz">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="opencv">
@@ -289,7 +290,7 @@
   
           </div>
           <div class="wordcount need-seperator meta-info">
-            745 词 
+            1.1k 词 
           </div>
         </div>
         
@@ -300,7 +301,7 @@
         
           <h2 id="一、介绍"><a href="#一、介绍" class="headerlink" title="一、介绍"></a>一、介绍</h2><p>OpenCV（Open Source Computer Vision Library）是一个开源的计算机视觉库。它由一系列C函数和少量C++类构成，同时也提供了Python、Ruby、MATLAB等语言的接口，实现了图像处理和计算机视觉方面的很多通用算法。OpenCV拥有包括500多个算法，并被广泛地使用于不同的领域，包括机器视觉，医学成像，视频分析，机器人，运动分析，面部和对象识别，光流法，图像分割，图像处理，手势识别，机器视觉应用，计算摄影学等。</p>
 <p>在计算机视觉项目的开发中，OpenCV作为较大众的开源库，拥有丰富的常用图像处理函数库，能够快速的实现一些图像处理和识别的任务。此外，由于它是开源的，开发者可以自由地使用和修改它，以满足他们的项目需求。这也使得OpenCV成为了计算机视觉领域中的一个重要工具。</p>
-<h2 id="二、代码编写"><a href="#二、代码编写" class="headerlink" title="二、代码编写"></a>二、代码编写</h2><p>首先使用<code>pip install opencv-python</code>安装opencv，以及在编码过程中，我会以以下图片为例，来展示处理的过程。</p>
+<h2 id="二、基础功能的代码编写"><a href="#二、基础功能的代码编写" class="headerlink" title="二、基础功能的代码编写"></a>二、基础功能的代码编写</h2><p>首先使用<code>pip install opencv-python</code>安装opencv，以及在编码过程中，我会以以下图片为例，来展示处理的过程。</p>
 <p><img src="/../image/%E4%BD%BF%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%96%87%E6%A1%A3%E7%9F%AB%E6%AD%A3%E5%8A%9F%E8%83%BD/origin.jpg" alt="测试图片"></p>
 <p>接下来先导入numpy和opencv：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br></pre></td></tr></table></figure>
@@ -323,6 +324,18 @@
 <li><code>approx = cv2.drawContours(image, [approx], 0, (0, 255, 0), 2)</code>将获得的轮廓附加到原始图像上，如下图：</li>
 </ol>
 <p><img src="/../image/%E4%BD%BF%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%96%87%E6%A1%A3%E7%9F%AB%E6%AD%A3%E5%8A%9F%E8%83%BD/approx.jpg" alt="gray"></p>
+<p>跳过将获取的轮廓附加到原图，<code>cv2.drawContours</code>会将<code>approx</code>转换成int32类型：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(approx.dtype) <span class="comment"># int32</span></span><br><span class="line"></span><br><span class="line">approx = np.reshape(approx, (approx.shape[<span class="number">0</span>], -<span class="number">1</span>))</span><br><span class="line">approx = approx.astype(np.float32)</span><br><span class="line"><span class="built_in">print</span>(approx.dtype) <span class="comment"># float32</span></span><br></pre></td></tr></table></figure>
+
+<p>我们需要将它转换成四行两列的矩阵，并将数据类型转换成float32。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">_, _, width, height = cv2.boundingRect(approx)</span><br><span class="line">    target_matrix = ([[<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                    [<span class="number">0</span>, height],</span><br><span class="line">                    [width, <span class="number">0</span>],</span><br><span class="line">                    [width, height]])</span><br><span class="line">    sum_approx = np.<span class="built_in">sum</span>(approx, axis=<span class="number">1</span>)</span><br><span class="line">    sorted_sum_approx = np.argsort(sum_approx)</span><br><span class="line">    approx = approx[sorted_sum_approx]</span><br><span class="line">    target = np.array(target_matrix, dtype=np.float32)</span><br></pre></td></tr></table></figure>
+
+<p>接着使用<code>cv2.boundingRect</code>获取轮廓外最小矩形的原点坐标和宽高，使用width和height两个变量来接收宽高数据，再创建一个四行二列的矩阵，依次为矩形左下角，左上角，右下角和右上角的坐标，对于一个横向的矩形，正好是x轴与y轴之和的递增排序。接着使用np.sum()获取<code>approx</code>每行的和，并进行排序，将此排序应用到<code>approx</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">corrected_image = cv2.warpPerspective(image, cv2.getPerspectiveTransform(approx, target), (width, height))</span><br></pre></td></tr></table></figure>
+
+<p>最后使用<code>cv2.warpPerspective(image, cv2.getPerspectiveTransform(approx, target), (width, height))</code>将<code>approx</code>透视变换到<code>target</code>，完成图像的矫正：</p>
+<p><img src="/../image/%E4%BD%BF%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%96%87%E6%A1%A3%E7%9F%AB%E6%AD%A3%E5%8A%9F%E8%83%BD/done.jpg" alt="done"></p>
+<p>多次尝试之后实现效果并不理想，目前只能当文档图片为横向且文档背景单一的情况下才有不错的效果，到此只实现基础功能，后续还会再做修改。</p>
 
         
       </div>
