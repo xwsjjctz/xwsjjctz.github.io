@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://xwsjjctz.github.io/image/%E4%BD%BF%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%96%87%E6%A1%A3%E7%9F%AB%E6%AD%A3%E5%8A%9F%E8%83%BD/approx.jpg">
 <meta property="og:image" content="https://xwsjjctz.github.io/image/%E4%BD%BF%E7%94%A8opencv%E5%AE%9E%E7%8E%B0%E6%96%87%E6%A1%A3%E7%9F%AB%E6%AD%A3%E5%8A%9F%E8%83%BD/done.jpg">
 <meta property="article:published_time" content="2023-11-09T15:35:45.000Z">
-<meta property="article:modified_time" content="2023-11-12T08:47:38.512Z">
+<meta property="article:modified_time" content="2023-11-12T10:52:28.441Z">
 <meta property="article:author" content="xwsjjctz">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="opencv">
@@ -330,7 +330,7 @@
 <p>我们需要将它转换成四行两列的矩阵，并将数据类型转换成float32。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">_, _, width, height = cv2.boundingRect(approx)</span><br><span class="line">    target_matrix = ([[<span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">                    [<span class="number">0</span>, height],</span><br><span class="line">                    [width, <span class="number">0</span>],</span><br><span class="line">                    [width, height]])</span><br><span class="line">    sum_approx = np.<span class="built_in">sum</span>(approx, axis=<span class="number">1</span>)</span><br><span class="line">    sorted_sum_approx = np.argsort(sum_approx)</span><br><span class="line">    approx = approx[sorted_sum_approx]</span><br><span class="line">    target = np.array(target_matrix, dtype=np.float32)</span><br></pre></td></tr></table></figure>
 
-<p>接着使用<code>cv2.boundingRect</code>获取轮廓外最小矩形的原点坐标和宽高，使用width和height两个变量来接收宽高数据，再创建一个四行二列的矩阵，依次为矩形左下角，左上角，右下角和右上角的坐标，对于一个横向的矩形，正好是x轴与y轴之和的递增排序。接着使用np.sum()获取<code>approx</code>每行的和，并进行排序，将此排序应用到<code>approx</code>。</p>
+<p>接着使用<code>cv2.boundingRect</code>获取轮廓外最小矩形的原点坐标和宽高，使用<code>width</code>和<code>height</code>两个变量来接收宽高数据，再创建一个四行二列的矩阵，依次为矩形左下角，左上角，右下角和右上角的坐标，对于一个横向的矩形，正好是x轴与y轴之和的递增排序。接着使用<code>np.sum()</code>获取<code>approx</code>每行的和，并进行排序，将此排序应用到<code>approx</code>。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">corrected_image = cv2.warpPerspective(image, cv2.getPerspectiveTransform(approx, target), (width, height))</span><br></pre></td></tr></table></figure>
 
 <p>最后使用<code>cv2.warpPerspective(image, cv2.getPerspectiveTransform(approx, target), (width, height))</code>将<code>approx</code>透视变换到<code>target</code>，完成图像的矫正：</p>
