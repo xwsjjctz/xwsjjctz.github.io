@@ -28,7 +28,7 @@
 <meta property="og:description" content="1600块在闲鱼捡了张2080ti，拥有tensor core加速半精度浮点计算确实是比tesla p40快太多了，11G显存也可以改22G，用于深度学习的话应该算是这个价位的最优选了。  深度学习docker环境配置之nvidia-docker安装使用-CSDN博客Windows子系统WSL2 （ubuntu安装 docker、nvidia-docker）WSL2安装nvidia-docker，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-21T08:25:51.000Z">
-<meta property="article:modified_time" content="2023-11-05T11:19:31.820Z">
+<meta property="article:modified_time" content="2023-11-17T18:47:43.823Z">
 <meta property="article:author" content="xwsjjctz">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="深度学习">
@@ -336,7 +336,9 @@
 
 <p>显卡驱动，pytorch以及jupyterlab全部可以正常使用。</p>
 <h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>使用wsl2进行深度学习可以算的上是Windows上最好的方案了，环境搭建简单，计算效率也会比在Windows上更高，由于wsl2采用了hypervisor一类虚拟化的方案，加上微软优化的非常好，实际性能损耗几乎可以忽略不计，并且CUDA基于Linux进行开发，在wsl2上执行效率是要比在Windows上高很多的，也省去了在Windows上把开发环境弄得非常乱，之后使用vscode连接wsl2进行开发或部署jupyterlab开发都可以做到和Windows一样的开发效率。</p>
-<p>做一些补充，我自己的机器用的是32G内存，启动pytorch容器后wsl2已经消耗了12G左右的内存，再进行应用的开发和部署的话显然不够了，推荐至少拥有48G内存进行相关开发，这里挖一个坑，前两天换了块华擎x570太极主板，根据官网介绍此主板支持ecc内存且5600X这块U最大支持128G内存，后续会从服务器上拆下来四根32GECC内存进行尝试并写心得以及文档。</p>
+<p>做一些补充，我自己的机器用的是32G内存，启动pytorch容器后wsl2已经消耗了12G左右的内存，再进行应用的开发和部署的话显然不够了，推荐至少拥有48G内存进行相关开发，这里挖一个坑，前两天换了块华擎x570太极主板，根据官网介绍此主板支持ecc内存且5600X这块U最大支持128G内存，后续会从服务器上拆下来四根32GECC内存进行尝试。</p>
+<hr>
+<p>经过测试，华擎x570太极的ECC内存支持方案并不支持手里的四根超微内存。</p>
 
         
       </div>
